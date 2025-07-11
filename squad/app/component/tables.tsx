@@ -1,6 +1,6 @@
 'use client'
 import React, {useState} from 'react';
-import {Transaction, OpportunityData} from "Mockdata";
+import {Transaction, OpportunityData} from "../../Mockdata";
 interface Props {
     data: Transaction[],
     opData: OpportunityData[],
@@ -98,7 +98,7 @@ export const Tables: React.FC<Props> = ({data, opData}) => {
                     return(
                     <tr key={idx}>
                     <td>{dt.userId}</td>
-                    <td>{opp.name} on {opp.chain}</td>
+                    <td>{opp ? `${opp.name} on ${opp.chain}` : 'N/A'}</td>
                     <td>{dt.type}</td>
                     <td>{new Date(dt.timestamp).toLocaleString()}</td>
                     <td>{dt.hash}</td>
